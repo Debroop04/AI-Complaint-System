@@ -1,0 +1,29 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-display: "Manrope", "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --color-navy: #0b3a5b;
+  --color-navy-deep: #082a44;
+  --color-accent: #2563eb;
+  --color-canvas: #eef2f7;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-canvas);
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(11, 58, 91, 0.06) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+}
+
+/* subtle tabular numbers for IDs, batch numbers, dates */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
