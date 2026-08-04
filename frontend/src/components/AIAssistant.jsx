@@ -75,22 +75,17 @@ const AIAssistant = ({ formData, onDataExtracted }) => {
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 relative overflow-hidden">
-
-      <div
-        className="absolute inset-x-0 top-0 h-1"
-        style={{ background: "linear-gradient(90deg, var(--color-navy), var(--color-accent))" }}
-      />
+    <div className="bg-white rounded-2xl border border-slate-200 p-6" style={{ boxShadow: "var(--shadow-card)" }}>
 
       <div className="flex items-center gap-3 mb-5">
         <div
-          className="h-10 w-10 rounded-xl flex items-center justify-center shadow-sm"
-          style={{ background: "linear-gradient(145deg, var(--color-navy) 0%, var(--color-accent) 100%)" }}
+          className="h-9 w-9 rounded-xl flex items-center justify-center"
+          style={{ background: "var(--color-navy)" }}
         >
-          <Sparkles className="text-white" size={18} />
+          <Sparkles className="text-white" size={16} />
         </div>
         <div>
-          <h2 className="font-display text-lg font-bold text-slate-900 leading-tight">
+          <h2 className="font-display text-[15px] font-bold text-slate-900 leading-tight">
             AI Complaint Assistant
           </h2>
           <p className="text-xs text-slate-400">
@@ -99,13 +94,13 @@ const AIAssistant = ({ formData, onDataExtracted }) => {
         </div>
       </div>
 
-      <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">
-        <MessageSquareText size={13} />
+      <div className="flex items-center gap-2 text-[11px] font-semibold text-slate-400 uppercase tracking-wide mb-2">
+        <MessageSquareText size={12} />
         Paste complaint text
       </div>
 
       <textarea
-        className="w-full border border-slate-300 rounded-xl p-3.5 h-36 resize-none text-sm outline-none transition-all duration-150 placeholder:text-slate-400 focus:ring-4 focus:ring-blue-100 focus:border-blue-500"
+        className="w-full border border-slate-200 rounded-xl p-3.5 h-36 resize-none text-sm outline-none transition-all duration-150 placeholder:text-slate-400 focus:ring-2 focus:ring-blue-100 focus:border-blue-400"
         placeholder="Paste the complaint here..."
         value={prompt}
         onChange={(e) => setPrompt(e.target.value)}
@@ -113,13 +108,13 @@ const AIAssistant = ({ formData, onDataExtracted }) => {
 
       <div className="mt-4">
 
-        <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">
-          <FileText size={13} />
+        <div className="flex items-center gap-2 text-[11px] font-semibold text-slate-400 uppercase tracking-wide mb-2">
+          <FileText size={12} />
           Or upload a document
         </div>
 
-        <label className="flex items-center justify-center gap-2 w-full border border-dashed border-slate-300 rounded-xl p-4 text-sm text-slate-500 hover:border-blue-400 hover:bg-blue-50/30 transition-all duration-150 cursor-pointer">
-          <FileText size={16} className="text-slate-400" />
+        <label className="flex items-center justify-center gap-2 w-full border border-dashed border-slate-200 rounded-xl p-4 text-sm text-slate-500 hover:border-blue-300 hover:bg-blue-50/20 transition-all duration-150 cursor-pointer">
+          <FileText size={15} className="text-slate-400" />
           {pdf ? pdf.name : "Choose a PDF file"}
           <input
             type="file"
@@ -134,29 +129,29 @@ const AIAssistant = ({ formData, onDataExtracted }) => {
       <button
         onClick={handleExtract}
         disabled={loading}
-        className="mt-4 flex items-center justify-center gap-2 w-full text-white font-semibold py-3 rounded-xl shadow-md shadow-blue-600/20 hover:shadow-lg hover:-translate-y-0.5 disabled:opacity-60 disabled:translate-y-0 disabled:shadow-none transition-all duration-200"
-        style={{ background: "linear-gradient(135deg, var(--color-navy) 0%, var(--color-accent) 100%)" }}
+        className="mt-4 flex items-center justify-center gap-2 w-full text-white text-sm font-semibold py-2.5 rounded-xl hover:opacity-90 disabled:opacity-50 transition-all duration-150"
+        style={{ background: "var(--color-navy)", boxShadow: "var(--shadow-sm)" }}
       >
-        <Wand2 size={16} />
+        <Wand2 size={15} />
         {loading ? "Extracting..." : "Extract Complaint"}
       </button>
 
       <button
         onClick={handlePdfExtract}
         disabled={loading || !pdf}
-        className="mt-3 w-full bg-white border border-purple-200 text-purple-700 font-semibold py-3 rounded-xl hover:bg-purple-50 disabled:opacity-50 disabled:bg-slate-50 disabled:text-slate-400 disabled:border-slate-200 transition-all duration-200"
+        className="mt-2.5 w-full bg-white border border-slate-200 text-slate-600 text-sm font-semibold py-2.5 rounded-xl hover:bg-slate-50 disabled:opacity-50 disabled:text-slate-400 transition-all duration-150"
       >
-        {loading ? "Extracting PDF..." : "📄 Extract from PDF"}
+        {loading ? "Extracting PDF..." : "Extract from PDF"}
       </button>
 
       <div className="my-6 border-t border-slate-100" />
 
-      <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">
+      <div className="flex items-center gap-2 text-[11px] font-semibold text-slate-400 uppercase tracking-wide mb-2">
         Follow-up Correction
       </div>
 
       <textarea
-        className="w-full border border-slate-300 rounded-xl p-3.5 h-24 resize-none text-sm outline-none transition-all duration-150 placeholder:text-slate-400 focus:ring-4 focus:ring-emerald-100 focus:border-emerald-500"
+        className="w-full border border-slate-200 rounded-xl p-3.5 h-24 resize-none text-sm outline-none transition-all duration-150 placeholder:text-slate-400 focus:ring-2 focus:ring-emerald-100 focus:border-emerald-400"
         placeholder='Example: "Actually it was 20 bottles expiring March 2028."'
         value={correction}
         onChange={(e) => setCorrection(e.target.value)}
@@ -165,7 +160,8 @@ const AIAssistant = ({ formData, onDataExtracted }) => {
       <button
         onClick={handleUpdate}
         disabled={loading || Object.keys(formData).length === 0}
-        className="mt-4 w-full bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 disabled:bg-slate-300 text-white font-semibold py-3 rounded-xl shadow-sm transition-all duration-200"
+        className="mt-4 w-full bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 disabled:bg-slate-300 text-white text-sm font-semibold py-2.5 rounded-xl transition-all duration-150"
+        style={{ boxShadow: "var(--shadow-sm)" }}
       >
         {loading ? "Updating..." : "Update Complaint"}
       </button>

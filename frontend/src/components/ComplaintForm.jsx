@@ -23,29 +23,24 @@ function ComplaintForm({ formData = {} }) {
       {/* PAGE HEADER */}
       {/* ========================= */}
 
-      <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 relative overflow-hidden">
-
-        <div
-          className="absolute inset-x-0 top-0 h-1"
-          style={{ background: "linear-gradient(90deg, var(--color-navy), var(--color-accent))" }}
-        />
+      <div className="bg-white rounded-2xl border border-slate-200 p-7" style={{ boxShadow: "var(--shadow-card)" }}>
 
         <div className="flex justify-between items-start">
 
           <div>
 
-            <h2 className="font-display text-3xl font-bold text-slate-900 tracking-tight">
+            <h2 className="font-display text-2xl font-bold text-slate-900 tracking-tight">
               Log Customer Complaint
             </h2>
 
-            <p className="mt-2 text-slate-500 max-w-xl leading-relaxed">
+            <p className="mt-1.5 text-slate-500 max-w-xl text-sm leading-relaxed">
               AI can automatically populate this form from emails,
               complaint letters, PDFs and customer messages.
             </p>
 
           </div>
 
-          <div className="flex items-center gap-2 bg-amber-50 text-amber-800 px-4 py-2 rounded-full text-sm font-semibold border border-amber-200 shrink-0">
+          <div className="flex items-center gap-2 bg-amber-50 text-amber-700 px-3.5 py-1.5 rounded-full text-xs font-semibold border border-amber-200 shrink-0">
             <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
             Pending Triage
           </div>
@@ -350,56 +345,56 @@ function ComplaintForm({ formData = {} }) {
 
       <div className="grid md:grid-cols-3 gap-5">
 
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 flex items-start justify-between">
+        <div className="bg-white rounded-2xl border border-slate-200 p-5 flex items-start justify-between" style={{ boxShadow: "var(--shadow-card)" }}>
 
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+            <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-400">
               Complaint Status
             </p>
 
-            <h3 className="mt-2 font-display text-xl font-bold text-amber-600">
+            <h3 className="mt-1.5 font-display text-lg font-bold text-amber-600">
               {formData.complaint_status || "Pending Triage"}
             </h3>
           </div>
 
-          <div className="h-9 w-9 rounded-lg bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600">
-            <AlertTriangle size={16} />
+          <div className="h-8 w-8 rounded-lg bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600">
+            <AlertTriangle size={15} />
           </div>
 
         </div>
 
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 flex items-start justify-between">
+        <div className="bg-white rounded-2xl border border-slate-200 p-5 flex items-start justify-between" style={{ boxShadow: "var(--shadow-card)" }}>
 
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+            <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-400">
               AI Extraction
             </p>
 
-            <h3 className="mt-2 font-display text-xl font-bold text-blue-600">
+            <h3 className="mt-1.5 font-display text-lg font-bold text-blue-600">
               {hasData ? "Completed" : "Awaiting Input"}
             </h3>
           </div>
 
-          <div className="h-9 w-9 rounded-lg bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600">
-            {hasData ? <CircleCheck size={16} /> : <Sparkles size={16} />}
+          <div className="h-8 w-8 rounded-lg bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600">
+            {hasData ? <CircleCheck size={15} /> : <Sparkles size={15} />}
           </div>
 
         </div>
 
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 flex items-start justify-between">
+        <div className="bg-white rounded-2xl border border-slate-200 p-5 flex items-start justify-between" style={{ boxShadow: "var(--shadow-card)" }}>
 
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+            <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-400">
               Investigation
             </p>
 
-            <h3 className="mt-2 font-display text-xl font-bold text-emerald-600">
+            <h3 className="mt-1.5 font-display text-lg font-bold text-emerald-600">
               Not Started
             </h3>
           </div>
 
-          <div className="h-9 w-9 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600">
-            <Loader size={16} />
+          <div className="h-8 w-8 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600">
+            <Loader size={15} />
           </div>
 
         </div>
@@ -410,20 +405,20 @@ function ComplaintForm({ formData = {} }) {
       {/* ACTION BUTTONS */}
       {/* ====================================================== */}
 
-      <div className="flex justify-end gap-4 pt-4 pb-10">
+      <div className="flex justify-end gap-3 pt-2 pb-10">
 
         <button
-          className="flex items-center gap-2 px-6 py-3 rounded-xl border border-slate-300 bg-white text-slate-600 font-medium hover:bg-slate-50 hover:border-slate-400 transition-all duration-200"
+          className="flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-600 text-sm font-medium hover:bg-slate-50 hover:border-slate-300 transition-all duration-150"
         >
-          <RotateCcw size={18} />
+          <RotateCcw size={16} />
           Reset Form
         </button>
 
         <button
-          className="flex items-center gap-2 px-8 py-3 rounded-xl text-white font-semibold shadow-lg shadow-blue-600/20 hover:shadow-xl hover:shadow-blue-600/25 hover:-translate-y-0.5 transition-all duration-200"
-          style={{ background: "linear-gradient(135deg, var(--color-navy) 0%, var(--color-accent) 100%)" }}
+          className="flex items-center gap-2 px-6 py-2.5 rounded-xl text-white text-sm font-semibold hover:opacity-90 transition-all duration-150"
+          style={{ background: "var(--color-navy)", boxShadow: "var(--shadow-sm)" }}
         >
-          <Save size={18} />
+          <Save size={16} />
           Save Complaint
         </button>
 

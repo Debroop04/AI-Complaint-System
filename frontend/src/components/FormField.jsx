@@ -13,11 +13,11 @@ function FormField({
   aiFilled = false,
 }) {
   const baseClass =
-    "w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 outline-none transition-all duration-150 placeholder:text-slate-400 focus:ring-4 focus:ring-blue-100 focus:border-blue-500 disabled:bg-slate-100 disabled:text-slate-500";
+    "w-full rounded-lg border border-slate-200 bg-white px-3.5 py-2.5 text-sm text-slate-800 outline-none transition-all duration-150 placeholder:text-slate-400 focus:ring-2 focus:ring-blue-100 focus:border-blue-400 disabled:bg-slate-50 disabled:text-slate-400";
 
   const readOnlyClass = readOnly
     ? aiFilled
-      ? "bg-blue-50/40 border-blue-200 cursor-default"
+      ? "bg-blue-50/30 border-blue-100 cursor-default"
       : "bg-slate-50 cursor-default"
     : "";
 
@@ -25,15 +25,15 @@ function FormField({
     <div className="flex flex-col gap-1.5">
 
       <div className="flex items-center justify-between">
-        <label className="text-[13px] font-semibold text-slate-600 tracking-wide">
+        <label className="text-[12.5px] font-semibold text-slate-500 tracking-wide">
           {label}
           {required && <span className="text-rose-500 ml-0.5">*</span>}
         </label>
 
         {aiFilled && (
-          <span className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-wide bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full border border-emerald-200">
-            <Sparkles size={11} strokeWidth={2.5} />
-            AI Filled
+          <span className="flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wide text-blue-600">
+            <Sparkles size={10} strokeWidth={2.5} />
+            AI filled
           </span>
         )}
       </div>

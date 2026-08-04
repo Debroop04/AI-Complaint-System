@@ -8,15 +8,19 @@
   --color-navy: #0b3a5b;
   --color-navy-deep: #082a44;
   --color-accent: #2563eb;
-  --color-canvas: #eef2f7;
+  --color-canvas: #f6f7f9;
+
+  --color-border: #e2e6ec;
+  --color-border-soft: #eceef2;
+  --color-surface: #ffffff;
+
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-card: 0 1px 3px rgba(15, 23, 42, 0.05), 0 1px 2px rgba(15, 23, 42, 0.03);
 }
 
 body {
   font-family: var(--font-body);
   background-color: var(--color-canvas);
-  background-image:
-    radial-gradient(circle at 1px 1px, rgba(11, 58, 91, 0.06) 1px, transparent 0);
-  background-size: 24px 24px;
 }
 
 h1, h2, h3, h4, .font-display {
