@@ -87,3 +87,14 @@ async def extract_pdf(
     )
 
     return result["complaint_data"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+        "https://ai-complaint-system-2-h65n.onrender.com"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
